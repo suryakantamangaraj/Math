@@ -3,4 +3,5 @@ _site
 _build
 notes/_build
 venv/
+.venv/
 oryx-build-commands.txt

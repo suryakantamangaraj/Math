@@ -1,52 +1,49 @@
 
-root: content/intro
-format: jb-book
+# jupyter-book v2 / mystmd TOC format
+# This file is referenced by myst.yml
 
-parts:
-  - caption: Arithmetic & Algebra
-    chapters:
-      - file: content/Arithmetic
-      # Add more algebra topics here as needed
+- file: content/intro
 
-  - caption: Calculus
-    chapters:
-      - file: content/first-order
-      - file: content/second-order/second-order
-        sections:
-          - file: content/second-order/analytical
-          - file: content/second-order/initial-value-problems
-          - file: content/second-order/numerical-methods
-          - file: content/second-order/fourier-series
-          - file: content/second-order/power-series
+- title: Arithmetic & Algebra
+  children:
+    - file: content/Arithmetic
 
-  - caption: Differential Equations
-    chapters:
-      - file: content/bvps/boundary-value-problems
-        sections:
-          - file: content/bvps/shooting-method
-          - file: content/bvps/finite-difference
-          - file: content/bvps/eigenvalue
-      - file: content/pdes/partial-differential-equations
-        sections:
-          - file: content/pdes/elliptic
-          - file: content/pdes/parabolic
+- title: Calculus
+  children:
+    - file: content/first-order
+    - file: content/second-order/second-order
+      children:
+        - file: content/second-order/analytical
+        - file: content/second-order/initial-value-problems
+        - file: content/second-order/numerical-methods
+        - file: content/second-order/fourier-series
+        - file: content/second-order/power-series
 
+- title: Differential Equations
+  children:
+    - file: content/bvps/boundary-value-problems
+      children:
+        - file: content/bvps/shooting-method
+        - file: content/bvps/finite-difference
+        - file: content/bvps/eigenvalue
+    - file: content/pdes/partial-differential-equations
+      children:
+        - file: content/pdes/elliptic
+        - file: content/pdes/parabolic
 
-  - caption: Linear Algebra
-    chapters:
-      - file: content/LinearAlgebra
+- title: Linear Algebra
+  children:
+    - file: content/LinearAlgebra
 
-  - caption: Geometry
-    chapters:
-      - file: content/Geometry
+- title: Geometry
+  children:
+    - file: content/Geometry
 
-  - caption: Number Theory
-    chapters:
-      - file: content/NumberTheory
+- title: Number Theory
+  children:
+    - file: content/NumberTheory
 
-  - caption: About
-    chapters:
-      - url: https://github.com/suryakantamangaraj/Mathematics/
-        title: GitHub repository
-      - file: content/contributing
-      - file: content/zbibliography
+- title: About
+  children:
+    - file: content/contributing
+    - file: content/zbibliography
