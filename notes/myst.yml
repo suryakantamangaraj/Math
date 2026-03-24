@@ -1,0 +1,70 @@
+version: 1
+project:
+  title: Mathematics Cookbook
+  authors:
+    - name: Surya Raj
+      url: https://suryaraj.me
+  github: https://github.com/suryakantamangaraj/Mathematics
+  license: CC-BY-4.0
+  description: >-
+    A comprehensive Mathematics Cookbook covering Arithmetic, Algebra, Calculus,
+    Linear Algebra, Geometry, Number Theory, and Differential Equations,
+    with Python-based examples and interactive notebooks.
+  bibliography:
+    - references.bib
+  exclude:
+    - _build
+    - Thumbs.db
+    - .DS_Store
+    - '**/.ipynb_checkpoints'
+  toc:
+    - file: content/intro
+    - title: Arithmetic & Algebra
+      children:
+        - file: content/Arithmetic
+
+    - title: Calculus
+      children:
+        - file: content/first-order
+        - file: content/second-order/second-order
+          children:
+            - file: content/second-order/analytical
+            - file: content/second-order/initial-value-problems
+            - file: content/second-order/numerical-methods
+            - file: content/second-order/fourier-series
+            - file: content/second-order/power-series
+
+    - title: Differential Equations
+      children:
+        - file: content/bvps/boundary-value-problems
+          children:
+            - file: content/bvps/shooting-method
+            - file: content/bvps/finite-difference
+            - file: content/bvps/eigenvalue
+        - file: content/pdes/partial-differential-equations
+          children:
+            - file: content/pdes/elliptic
+            - file: content/pdes/parabolic
+
+    - title: Linear Algebra
+      children:
+        - file: content/LinearAlgebra
+
+    - title: Geometry
+      children:
+        - file: content/Geometry
+
+    - title: Number Theory
+      children:
+        - file: content/NumberTheory
+
+    - title: About
+      children:
+        - file: content/contributing
+        - file: content/zbibliography
+
+site:
+  template: book-theme
+  title: Mathematics Cookbook
+  options:
+    favicon: images/logo/favicon.ico

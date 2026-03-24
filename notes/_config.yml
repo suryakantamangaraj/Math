@@ -1,5 +1,7 @@
+# LEGACY: This file is kept for reference (jupyter-book v1).
+# The active configuration for jupyter-book v2 is in myst.yml.
 # Book settings
-title: Mathematics Notes
+title: Mathematics Cookbook
 author: Surya
 #logo: logo.jpg
 
