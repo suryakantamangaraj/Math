@@ -1,6 +1,6 @@
 # Mechanical Engineering Methods
 
-**By [Surya Raj](https://suryaraj.me)**
+**By [Surya Raj](https://suryaraj.com)**
 
 This notes contain material and example problems in numerical methods for engineering, in the format of Jupyter notebooks, developed to supplement the Mathematics.
 
