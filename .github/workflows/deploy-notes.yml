@@ -1,51 +1,57 @@
 name: deploy-notes
 
-# Only run this when the main branch changes
+# Trigger on pushes to main (production) or manually via the Actions tab
 on:
   push:
     branches:
-    - main
+      - main
+  workflow_dispatch:
 
-# This job installs dependencies, build the notes, and pushes it to `gh-pages`
+# This job installs dependencies, builds the book, and deploys to gh-pages
+# which is served at https://math.suryaraj.com via the CNAME record.
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
-    - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    # Install dependencies
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.9
-    - name: Upgrade pip
-      run: python3 -m pip install --upgrade pip setuptools wheel
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
 
-    # - name: Cache dependencies
-    #   uses: actions/cache@v3.2.0
-    #   with:
-    #     path: ~/.cache/pip
-    #     key: ${{ runner.os }}-pip-${{ hashFiles('**/freeze.txt') }}
-    #     restore-keys: ${{ runner.os }}-pip-
-    
-    # - name: Install dependencies
-    #   run: |
-    #      python3 -m pip install --no-deps -r freeze.txt
-    - name: Install dependencies
-      run: |
-         python3 -m pip install -r requirements.txt
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: ${{ runner.os }}-pip-
 
-    # Build the notes
-    - name: Build the notes
-      shell: bash -l {0}
-      run: |
-        jupyter-book build notes -vv
+      - name: Upgrade pip
+        run: python -m pip install --upgrade pip setuptools wheel
 
-    # Push the book's HTML to github-pages
-    - name: GitHub Pages action
-      uses: peaceiris/actions-gh-pages@v3.9.0
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./notes/_build/html
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      # Build the book with jupyter-book (JupyterBook v1 / Sphinx backend)
+      - name: Build the book
+        run: jupyter-book build notes
+
+      # Deploy built HTML + CNAME to the gh-pages branch.
+      # peaceiris/actions-gh-pages writes the CNAME file automatically so
+      # the custom domain math.suryaraj.com is never lost between deployments.
+      - name: Deploy to GitHub Pages (gh-pages branch)
+        uses: peaceiris/actions-gh-pages@v3.9.3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./notes/_build/html
+          cname: math.suryaraj.com
+          force_orphan: true
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_message: "deploy: ${{ github.event.head_commit.message }}"
