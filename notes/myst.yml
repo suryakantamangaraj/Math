@@ -1,13 +1,13 @@
 version: 1
 project:
-  title: Mathematics Cookbook
+  title: Math Notes
   authors:
     - name: Surya Raj
-      url: https://suryaraj.me
-  github: https://github.com/suryakantamangaraj/Mathematics
+      url: https://suryaraj.com
+  github: https://github.com/suryakantamangaraj/Math
   license: CC-BY-4.0
   description: >-
-    A comprehensive Mathematics Cookbook covering Arithmetic, Algebra, Calculus,
+    Math Notes — a comprehensive reference covering Arithmetic, Algebra, Calculus,
     Linear Algebra, Geometry, Number Theory, and Differential Equations,
     with Python-based examples and interactive notebooks.
   bibliography:
@@ -65,6 +65,7 @@ project:
 
 site:
   template: book-theme
-  title: Mathematics Cookbook
+  title: Math Notes
+  url: https://math.suryaraj.com
   options:
     favicon: images/logo/favicon.ico

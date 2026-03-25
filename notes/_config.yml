@@ -1,7 +1,7 @@
 # LEGACY: This file is kept for reference (jupyter-book v1).
 # The active configuration for jupyter-book v2 is in myst.yml.
 # Book settings
-title: Mathematics Cookbook
+title: Math Notes
 author: Surya
 #logo: logo.jpg
 
@@ -54,15 +54,15 @@ parse:
     #- substitution
 
 repository:
-  url: https://github.com/suryakantamangaraj/Mathematics
+  url: https://github.com/suryakantamangaraj/Math
   branch: master
   path_to_book: "notes"
 
 html:
-  baseurl: https://suryaraj.me/Mathematics
+  baseurl: https://math.suryaraj.com
   use_edit_page_button: true
   use_repository_button: true
   use_issues_button: true
   extra_navbar: Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
   extra_footer: |
-    <p xmlns:dct="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#" class="license-text"><a rel="cc:attributionURL" property="dct:title" href="https://github.com/suryakantamangaraj/Mathematics">Mathematics Notes</a> by <span property="cc:attributionName">Surya Raj</span> is licensed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" /></a></p>
+    <p xmlns:dct="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#" class="license-text"><a rel="cc:attributionURL" property="dct:title" href="https://github.com/suryakantamangaraj/Math">Math Notes</a> by <span property="cc:attributionName">Surya Raj</span> is licensed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" /><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" /></a></p>

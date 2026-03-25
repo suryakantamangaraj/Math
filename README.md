@@ -1,58 +1,78 @@
 # Mathematics
 
-Welcome to the **Mathematics** repository! My name is [Surya Raj](https://suryaraj.me), and I'll be writing and curating a collection of math-related notes and resources here. Whether you're a student, educator, or simply curious about mathematics, you've come to the right place.
+> **Live site → [math.suryaraj.com](https://math.suryaraj.com)**
 
-## About This Repository
+Welcome to the **Math Notes** repository — a growing, open collection of math notes, derivations, and Python-backed examples curated by [Surya Raj](https://suryaraj.com).
+Whether you are a student refreshing fundamentals, an engineer looking for quick references, or someone who simply loves mathematics, you are in the right place.
 
-- **Purpose**: This repository serves as an electronic notebook for various mathematical topics.
-- **Content**: You'll find notes, explanations, and examples related to different branches of mathematics.
-- **Collaboration**: Contributions from the community are highly encouraged! Feel free to add your insights, corrections, or additional content.
+---
 
-## Branches of Mathematics
+## What's Inside
 
-1. **Arithmetic**:
-   - Deals with basic numerical operations: addition, subtraction, multiplication, and division.
-   - Foundation for more advanced mathematical concepts.
+| Topic | Status | Notes |
+|---|---|---|
+| **Arithmetic & Algebra** | ✅ Active | Basic operations, NumPy examples |
+| **Calculus — 1st-order ODEs** | ✅ Active | Integration, separation of variables, Bernoulli |
+| **Calculus — 2nd-order ODEs** | ✅ Active | Analytical, numerical, Fourier series, power series |
+| **Differential Equations — BVPs** | ✅ Active | Shooting method, finite difference, eigenvalue |
+| **Differential Equations — PDEs** | ✅ Active | Elliptic and parabolic types |
+| **Linear Algebra** | 🚧 Needs depth | Vectors, matrices, eigenvalues, SVD — fill gaps! |
+| **Geometry** | 🚧 Needs depth | Plane, coordinate, solid, trigonometry — fill gaps! |
+| **Number Theory** | 🚧 Needs depth | Primes, modular arithmetic, Diophantine — fill gaps! |
 
-2. **Algebra**:
-   - Involves unknown quantities represented by letters (e.g., $$x$$, $$y$$).
-   - Generalizes formulas and rules, solving equations and inequalities.
+> **Calling all contributors!** The Linear Algebra, Geometry, and Number Theory sections have solid outlines but need more worked examples, Python notebooks, and deeper coverage. See [Contributing](#contributing) below.
 
-3. **Geometry**:
-   - Studies shapes, sizes, and properties of figures.
-   - Includes points, lines, angles, surfaces, and solids.
+---
 
-4. **Trigonometry**:
-   - Focuses on relationships between angles and sides of triangles.
-   - Essential for navigation, engineering, and physics.
+## How It's Built
 
-5. **Calculus**:
-   - Deals with rates of change and accumulation.
-   - Includes concepts of limits, derivatives, and integrals.
+- **Framework**: [MyST Markdown](https://mystmd.org/) + [Jupyter Book](https://jupyterbook.org/)
+- **Language**: Python 3 (NumPy, SciPy, Matplotlib)
+- **Hosting**: GitHub Pages at [math.suryaraj.com](https://math.suryaraj.com)
+- **License**: Code — BSD 3-Clause · Text — CC-BY-4.0
 
-6. **Number Theory**:
-   - Explores properties of integers and prime numbers.
-   - Fundamental in cryptography and coding theory.
+---
 
-7. **Combinatorics**:
-   - Concerned with counting, arrangements, and permutations.
-   - Used in probability and optimization.
+## Running Locally
 
-8. **Topology**:
-   - Studies properties of space that remain unchanged under continuous deformations.
-   - Focuses on concepts like continuity and compactness.
+```bash
+# 1. Clone and create virtual environment
+git clone https://github.com/suryakantamangaraj/Math.git
+cd Math
+python -m venv .venv
+source .venv/bin/activate        # Windows: .venv\Scripts\activate
 
-9. **Matrix Algebra**:
-   - Deals with matrices, their operations, and applications.
-   - Used in linear algebra, computer graphics, and data analysis.
+# 2. Install dependencies
+pip install -r requirements.txt
 
-## How to Contribute
+# 3. Build the book
+cd notes
+myst build --html            # MyST v2
+# OR: jupyter-book build .   # JupyterBook v1 (legacy)
 
-Contributions are welcome! If you have insights, examples, or additional content related to any mathematical topic, feel free to submit pull requests. Let's build a valuable resource together!
+# 4. Open in browser
+open _build/html/index.html
+```
+
+---
+
+## Contributing
+
+Contributions are very welcome — no contribution is too small!
+
+See [**CONTRIBUTING.md**](notes/content/contributing.md) in the book content (also rendered on the live site) for the full guide.  Quick ways to help:
+
+- 📝 **Fill topic gaps** — add worked examples or deeper explanations to Linear Algebra, Geometry, or Number Theory
+- 🐍 **Add Python notebooks** — convert existing markdown sections into interactive `.ipynb` notebooks
+- 🐛 **Fix errors** — typos, wrong formulas, broken references
+- 💡 **Suggest topics** — open an [issue](https://github.com/suryakantamangaraj/Math/issues) with topic requests
+
+Please read the [Code of Conduct](CODE_OF_CONDUCT.md) before participating.
+
+---
 
 ## Licensing
 
-- The code portions of this material are licensed under the **BSD 3-Clause License** (see `LICENSE.txt`).
-- Non-code portions (such as text, explanations, and diagrams) are licensed under the **Creative Commons Attribution License (CC-BY)** (see `LICENSE-text.txt`).
+- **Code** (`.py`, `.ipynb` code cells): [BSD 3-Clause License](LICENSE.txt)
+- **Text, explanations, and diagrams**: [Creative Commons Attribution 4.0 (CC-BY-4.0)](LICENSE-text.txt)
 
-Feel free to explore, learn, and contribute. Happy math-ing! 🌟
