@@ -37,9 +37,23 @@ jobs:
       - name: Install dependencies
         run: python -m pip install -r requirements.txt
 
-      # Build the book with jupyter-book (JupyterBook v1 / Sphinx backend)
+      # Build the static HTML site with JupyterBook v2 (MyST engine).
+      # Must run from inside the notes/ directory; --html produces a fully
+      # static site in _build/html/; --ci suppresses interactive prompts.
       - name: Build the book
-        run: jupyter-book build notes
+        run: |
+          cd notes
+          jupyter-book build --html --ci
+
+      # Fail fast: ensure the build actually produced HTML before deploying.
+      - name: Verify build output exists
+        run: |
+          if [ ! -f "./notes/_build/html/index.html" ]; then
+            echo "ERROR: Build output missing — notes/_build/html/index.html not found"
+            exit 1
+          fi
+          echo "Build output verified. Files:"
+          ls ./notes/_build/html/
 
       # Deploy built HTML + CNAME to the gh-pages branch.
       # peaceiris/actions-gh-pages writes the CNAME file automatically so
