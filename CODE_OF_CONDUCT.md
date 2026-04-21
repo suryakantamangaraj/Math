@@ -1,4 +1,3 @@
-
 # Contributor Covenant Code of Conduct
 
 ## Our Pledge
@@ -48,6 +47,10 @@ Community leaders have the right and responsibility to remove, edit, or reject
 comments, commits, code, wiki edits, issues, and other contributions that are
 not aligned to this Code of Conduct, and will communicate reasons for moderation
 decisions when appropriate.
+
+## Enforcement Contact
+
+- Enforcement Contact: Surya Raj (https://suryaraj.me, surya.raj@example.com)
 
 ## Scope
 

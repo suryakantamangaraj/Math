@@ -45,6 +45,7 @@ project:
           children:
             - file: content/pdes/elliptic
             - file: content/pdes/parabolic
+            - file: content/pdes/hyperbolic
 
     - title: Linear Algebra
       children:
