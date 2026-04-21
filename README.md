@@ -7,6 +7,19 @@ Whether you are a student refreshing fundamentals, an engineer looking for quick
 
 ---
 
+<<<<<<< HEAD
+
+## Branches of Mathematics
+
+1. **Arithmetic**: Basic numerical operations and foundation for advanced concepts.
+2. **Algebra**: Generalizes formulas, solves equations and inequalities.
+3. **Geometry**: Shapes, sizes, and properties of figures.
+4. **Calculus**: Rates of change, limits, derivatives, and integrals.
+5. **Number Theory**: Properties of integers and primes.
+6. **Linear Algebra**: Matrices, operations, and applications.
+
+Other topics (Trigonometry, Combinatorics, Topology) may be added in the future.
+=======
 ## What's Inside
 
 | Topic | Status | Notes |
@@ -44,6 +57,7 @@ source .venv/bin/activate        # Windows: .venv\Scripts\activate
 
 # 2. Install dependencies
 pip install -r requirements.txt
+>>>>>>> origin/main
 
 # 3. Build the book
 cd notes

@@ -98,43 +98,37 @@ Then, we can use the dummy index rule to change $m$ back to $n$:
 \sum_{m=0}^{\infty} a_m (m+2)(m+1) x^m \rightarrow \sum_{n=0}^{\infty} a_n (n+2)(n+1) x^n
 \end{equation}
 Now, let's replace the first term in the ODE with that, merge both terms into a single sum, and simplify:
-\begin{align}
-\sum_{n=0}^{\infty} a_n (n+2)(n+1) x^n + \sum_{n=0}^{\infty} a_n x^n &= 0 \\
-\sum_{n=0}^{\infty} x^n \left[ a_{n+2}(n+2)(n+1) + a_n \right] &= 0
-\end{align}
 
-There are infinite terms in this sum, involving the continuous variable $x$; the only way that equation can be satisfied is if
+$$
+\sum_{n=0}^{\infty} \left[a_{n+2}(n+2)(n+1) + a_n\right] x^n = 0
+$$
 
-- $x=0$ always, which cannot be true, or
-- $a_{n+2}(n+2)(n+1) + a_n = 0$ for all values of $n$. This is what we can use to find the coefficients of our power series solution.
+For this to be true for all $x$, each coefficient must be zero:
 
-Use that expression to define a recursive formula for the coefficients:
-\begin{equation}
-a_{n+2} = \frac{-a_n}{(n+1)(n+2)}
-\end{equation}
-We can see that the even coefficients will be related to each other, and the odd coefficients will be related. Let's try to identify a pattern with each, starting with the even terms:
-\begin{align}
-n=0: \quad a_2 &= \frac{-a_0}{1 \cdot 2} = \frac{-a_0}{2!} \\
-n=2: \quad a_4 &= \frac{-a_2}{3 \cdot 4} = \frac{a_0}{4!} \\
-n=4: \quad a_6 &= \frac{-a_4}{5 \cdot 6} = \frac{-a_0}{6!}
-\end{align}
-and the odd terms:
-\begin{align}
-n=1: \quad a_3 &= \frac{-a_1}{2 \cdot 3} = \frac{-a_1}{3!} \\
-n=3: \quad a_5 &= \frac{-a_3}{4 \cdot 5} = \frac{a_1}{5!} \\
-n=5: \quad a_7 &= \frac{-a_5}{6 \cdot 7} = \frac{-a_1}{7!}
-\end{align}
+$$
+a_{n+2}(n+2)(n+1) + a_n = 0 \implies a_{n+2} = -\frac{a_n}{(n+2)(n+1)}
+$$
 
-Now, let's put that all together:
-\begin{align}
-y(x) &= a_0 + a_1 x + a_2 x^2 + a_3 x^3 + \dots \\
-y &= a_0 \left( 1 - \frac{x^2}{2!} + \frac{x^4}{4!} + \dots \right) + a_1 \left( x - \frac{x^3}{3!} + \frac{x^5}{5!} + \dots \right)
-\end{align}
-which you might recognize as being the Taylor series expansion of sine and cosine:
-\begin{equation}
-y(x) = a_0 \cos x + a_1 \sin x
-\end{equation}
-So, our unknown coefficients end up being our integration constants, which we can use our two constraints to find.
+This recursion lets us generate all coefficients from $a_0$ and $a_1$ (the two initial conditions for a 2nd-order ODE).
+
+### Solution Construction
+
+Let $a_0$ and $a_1$ be arbitrary constants:
+
+- $a_2 = -\frac{a_0}{2\cdot 1}$
+- $a_3 = -\frac{a_1}{3\cdot 2}$
+- $a_4 = -\frac{a_2}{4\cdot 3} = \frac{a_0}{4\cdot 3\cdot 2\cdot 1}$
+- $a_5 = -\frac{a_3}{5\cdot 4} = \frac{a_1}{5\cdot 4\cdot 3\cdot 2}$
+
+So,
+
+$$
+y(x) = a_0\left[1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \cdots\right] + a_1\left[x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots\right]
+$$
+
+These are the Taylor series for $\cos x$ and $\sin x$! Thus, the power series solution recovers the known result.
+
+---
 
 ## Power series example 2
 
