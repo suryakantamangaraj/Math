@@ -70,3 +70,10 @@ site:
   url: https://math.suryaraj.com
   options:
     favicon: images/logo/favicon.ico
+    logo: images/logo/logo.png
+    logo_text: Math Notes
+    downloads:
+      - pdf
+  parts:
+    primary_sidebar_footer: primary-sidebar-footer.md
+    footer: footer.md
