@@ -1,0 +1,41 @@
+name: Content Request
+description: Suggest a new topic, chapter, or example
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have a topic you'd like to see covered? Let us know!
+
+  - type: input
+    id: topic
+    attributes:
+      label: Topic
+      description: What topic or concept should be added?
+      placeholder: e.g., Group Theory, Laplace Transforms
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Describe what the content should cover and why it would be useful.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: section
+    attributes:
+      label: Section
+      description: Which part of the book does this belong to?
+      options:
+        - Arithmetic & Algebra
+        - Calculus
+        - Differential Equations
+        - Linear Algebra
+        - Geometry
+        - Number Theory
+        - New Section
+    validations:
+      required: true

@@ -1,0 +1,25 @@
+name: Question
+description: Ask a question about the content or project
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have a question? Ask away!
+
+  - type: input
+    id: topic
+    attributes:
+      label: Related Topic
+      description: Which topic or page is this about?
+      placeholder: e.g., Boundary Value Problems
+    validations:
+      required: false
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your Question
+      description: Describe your question in detail.
+    validations:
+      required: true
