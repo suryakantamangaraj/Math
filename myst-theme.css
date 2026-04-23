@@ -1,0 +1,7 @@
+/* User Provided Stylesheet */
+
+/* Hide the auto-generated page action icons (CC, GitHub, Edit, Download)
+   from the top of each page — they live in the site footer instead. */
+.myst-fm-block-badges {
+  display: none !important;
+}
