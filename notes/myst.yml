@@ -72,6 +72,7 @@ site:
     favicon: images/logo/favicon.ico
     logo: images/logo/logo.png
     logo_text: Math Notes
+    style: custom.css
     downloads:
       - pdf
   parts:
